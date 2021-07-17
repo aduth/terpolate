@@ -54,7 +54,7 @@ export function push(array, value) {
 
 /**
  * Given an HTML string and an object of tag names to component or element,
- * returns a new virtual node where the mapped tag names are replaced by the
+ * returns an array of nodes where the mapped tag names are replaced by the
  * resulting element of the rendered component.
  *
  * @template {(type: any, props: object, key?: any) => any} JSX
