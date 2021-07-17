@@ -1,0 +1,24 @@
+{
+	"extends": "@aduth/eslint-config/es5",
+	"parserOptions": {
+		"sourceType": "module",
+		"ecmaVersion": 2015
+	},
+	"env": {
+		"browser": true,
+		"mocha": true
+	},
+	"globals": {
+		"WeakMap": true
+	},
+	"rules": {
+		"vars-on-top": "off",
+		"one-var": "off"
+	},
+	"overrides": [
+		{
+			"files": "test/**/*",
+			"extends": "@aduth/eslint-config"
+		}
+	]
+}

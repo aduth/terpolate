@@ -1,0 +1,18 @@
+{
+	"compilerOptions": {
+		"allowJs": true,
+		"checkJs": true,
+		"noEmit": true,
+		"strict": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"moduleResolution": "node",
+		"module": "ESNext",
+		"target": "ESNext",
+		"baseUrl": ".",
+		"paths": {
+			"*": ["typings/*"]
+		}
+	},
+	"include": ["base.js", "react.js", "preact.js", "dom.js", "test"]
+}

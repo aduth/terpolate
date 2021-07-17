@@ -1,0 +1,72 @@
+{
+	"name": "terpolate",
+	"version": "1.0.0",
+	"type": "module",
+	"description": "String interpolation for React, Preact, and plain DOM",
+	"main": "react.js",
+	"exports": {
+		".": "./react.js",
+		"./react": "./react.js",
+		"./preact": "./preact.js",
+		"./dom": "./dom.js"
+	},
+	"engines": {
+		"node": ">=12"
+	},
+	"files": [
+		"base.js",
+		"dom.js",
+		"preact.js",
+		"react.js",
+		"*.d.ts"
+	],
+	"scripts": {
+		"prebuild:types": "npm run clean",
+		"build:types": "tsc -p tsconfig.decl.json",
+		"build": "run-p build:*",
+		"clean": "rm -f *.d.ts",
+		"test:unit": "mocha",
+		"test:lint": "eslint .",
+		"pretest:typecheck": "npm run clean",
+		"test:typecheck": "tsc",
+		"test": "run-p test:*",
+		"presize": "[ -e node_modules/.bin/microbundle ] || npm i --no-save microbundle",
+		"size": "microbundle -o .tmp -f esm -i react.js",
+		"prepublishOnly": "npm run build"
+	},
+	"peerDependencies": {
+		"preact": ">=10.5.0",
+		"react": "0.14.10 || ~15.7.0 || ~16.14.0 || >=17"
+	},
+	"peerDependenciesMeta": {
+		"preact": {
+			"optional": true
+		},
+		"react": {
+			"optional": true
+		}
+	},
+	"devDependencies": {
+		"@aduth/eslint-config": "^4.2.1",
+		"@types/chai": "^4.2.21",
+		"@types/jsdom-global": "^3.0.2",
+		"@types/mocha": "^8.2.3",
+		"@types/react": "^17.0.14",
+		"@types/react-dom": "^17.0.9",
+		"chai": "^4.3.4",
+		"eslint": "^7.30.0",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-prettier": "^3.4.0",
+		"jsdom-global": "^3.0.2",
+		"mocha": "^9.0.2",
+		"npm-run-all": "^4.1.5",
+		"preact": "^10.5.14",
+		"preact-render-to-string": "^5.1.19",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"typescript": "^4.3.5"
+	},
+	"dependencies": {
+		"hijinks": "^1.1.0"
+	}
+}
