@@ -10,7 +10,7 @@ Why use Terpolate?
 
 What are some use-cases?
 
-- 🌍 **Internationalization**: Easily include markup in your translated texts.
+- 🌍 **Internationalization (i18n)**: Easily include markup in your translated texts.
 
 ## Installation
 
