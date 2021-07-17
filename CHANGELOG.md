@@ -1,4 +1,4 @@
-## v1.0.1 (Unreleased)
+## v1.0.1 (2021-07-17)
 
 - **Refactor:** Simplify logic for creating DOM document fragment.
 
