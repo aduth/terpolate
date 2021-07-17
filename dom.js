@@ -30,11 +30,7 @@ export function interpolate(string, handlers) {
 	var result = baseInterpolate(jsx, string, handlers),
 		fragment = document.createDocumentFragment();
 
-	result.forEach(function (part) {
-		fragment.append(
-			typeof part === 'string' ? document.createTextNode(part) : part
-		);
-	});
+	fragment.append.apply(fragment, result);
 
 	return fragment;
 }
