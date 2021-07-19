@@ -1,6 +1,7 @@
 ## v1.0.3 (Unreleased)
 
 - **Optimize:** Bump dependencies to simplify, shrink bundle sizen.
+- **Types:** Improve TypeScript types for DOM implementation to support HTMLElement passed as handler.
 
 ## v1.0.2 (2021-07-18)
 
