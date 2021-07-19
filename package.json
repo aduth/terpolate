@@ -31,7 +31,10 @@
 		"test:typecheck": "tsc",
 		"test": "run-p test:*",
 		"presize": "[ -e node_modules/.bin/microbundle ] || npm i --no-save microbundle",
-		"size": "microbundle -o .tmp -f esm -i react.js",
+		"size": "run-p size:*",
+		"size:react": "microbundle -o .tmp/react.js -f esm -i react.js",
+		"size:preact": "microbundle -o .tmp/preact.js -f esm -i preact.js",
+		"size:dom": "microbundle -o .tmp/dom.js -f esm -i dom.js",
 		"prepublishOnly": "npm run build"
 	},
 	"peerDependencies": {
