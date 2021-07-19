@@ -1,7 +1,8 @@
 import { h } from 'hijinks';
+import jsdomGlobal from 'jsdom-global';
+import { expect } from 'chai';
 import { interpolate } from '../dom.js';
 import { createTests } from './support/create.js';
-import jsdomGlobal from 'jsdom-global';
 
 /**
  * @param {DocumentFragment|string} fragment
@@ -30,4 +31,20 @@ describe('dom', () => {
 	});
 
 	createTests(interpolate, h, renderToString);
+
+	it('copies element attributes (readme example)', () => {
+		const link = document.createElement('a');
+		link.href = '/help';
+		const element = interpolate(
+			'<strong>If you need help</strong>, visit our <a>Help Center</a>.',
+			{
+				strong: 'strong',
+				a: link,
+			}
+		);
+
+		expect(renderToString(element)).to.equal(
+			'<strong>If you need help</strong>, visit our <a href="/help">Help Center</a>.'
+		);
+	});
 });
