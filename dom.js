@@ -1,4 +1,5 @@
-import createElement from 'hijinks';
+import { jsx as baseJSX } from 'hijinks/jsx-runtime';
+import { h, Fragment } from 'hijinks';
 import baseInterpolate from './base.js';
 
 /**
@@ -15,9 +16,7 @@ function jsx(type, props) {
 		type = type.tagName;
 	}
 
-	var children = props.children;
-	delete props.children;
-	return createElement(type, props, children);
+	return baseJSX(type, props);
 }
 
 /**
@@ -27,10 +26,5 @@ function jsx(type, props) {
  * @return {DocumentFragment}
  */
 export function interpolate(string, handlers) {
-	var result = baseInterpolate(jsx, string, handlers),
-		fragment = document.createDocumentFragment();
-
-	fragment.append.apply(fragment, result);
-
-	return fragment;
+	return h(Fragment, null, baseInterpolate(jsx, string, handlers));
 }

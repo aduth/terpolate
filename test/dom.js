@@ -1,4 +1,4 @@
-import createElement from 'hijinks';
+import { h } from 'hijinks';
 import { interpolate } from '../dom.js';
 import { createTests } from './support/create.js';
 import jsdomGlobal from 'jsdom-global';
@@ -29,5 +29,5 @@ describe('dom', () => {
 		this.jsdomCleanup();
 	});
 
-	createTests(interpolate, createElement, renderToString);
+	createTests(interpolate, h, renderToString);
 });

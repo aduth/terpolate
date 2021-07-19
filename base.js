@@ -63,7 +63,7 @@ export function push(array, value) {
  * @param {string} html HTML to format.
  * @param {Handlers} handlers Mapping of tag names to tag name or component.
  *
- * @return {Array<ReturnType<JSX>>}
+ * @return {ReturnType<JSX>}
  */
 function interpolate(jsx, html, handlers) {
 	var pattern = /<([\w-]+).*?(?:\/>|>(.*?)<\/\1>)/gi,
@@ -101,7 +101,7 @@ function interpolate(jsx, html, handlers) {
 
 	push(result, html.slice(lastIndex));
 
-	return result;
+	return /** @type {ReturnType<JSX>} */ (result);
 }
 
 export default interpolate;

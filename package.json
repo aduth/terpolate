@@ -67,6 +67,6 @@
 		"typescript": "^4.3.5"
 	},
 	"dependencies": {
-		"hijinks": "^1.1.0"
+		"hijinks": "^2.0.0"
 	}
 }

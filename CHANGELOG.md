@@ -1,3 +1,7 @@
+## v1.0.2 (Unreleased)
+
+- **Internal:** Bump dependencies to simplify implementation.
+
 ## v1.0.1 (2021-07-17)
 
 - **Refactor:** Simplify logic for creating DOM document fragment.
