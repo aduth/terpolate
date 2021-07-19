@@ -1,4 +1,4 @@
-## v1.0.2 (Unreleased)
+## v1.0.2 (2021-07-18)
 
 - **Internal:** Bump dependencies to simplify implementation.
 
