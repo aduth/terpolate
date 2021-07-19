@@ -90,9 +90,10 @@ export function createTests(interpolate, h, renderToString) {
 		});
 
 		it('is reasonable about tag names it accepts', () => {
-			const original = '<a><b></b></a>><valueOf></valueOf>';
+			const original = '<a><b></b></a>><valueOf></valueOf><no no></no no>';
 			const element = interpolate(original, {
 				'a>': 'div',
+				'no no': 'div',
 				...'\\^$\\\\.*+?()[]{}|'
 					.split('')
 					.reduce(
