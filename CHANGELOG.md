@@ -1,15 +1,29 @@
 ## v1.0.3 (Unreleased)
 
-- **Optimize:** Bump dependencies to simplify, shrink bundle sizen.
-- **Types:** Improve TypeScript types for DOM implementation to support HTMLElement passed as handler.
+### Bug Fixes
+
+- Fix usage of SVG element for DOM handler.
+
+### Optimization
+
+- Above SVG element bug fix should shrink DOM bundle size slightly.
+- Bump dependencies to simplify, shrink DOM bundle size.
+
+### TypeScript
+
+- Improve TypeScript types for DOM implementation to support Element passed as handler.
 
 ## v1.0.2 (2021-07-18)
 
-- **Optimize:** Bump dependencies to simplify, shrink bundle sizen.
+### Optimization
+
+- Bump dependencies to simplify, shrink DOM bundle size.
 
 ## v1.0.1 (2021-07-17)
 
-- **Refactor:** Simplify logic for creating DOM document fragment.
+### Internal
+
+- Refactor to simplify logic for creating DOM document fragment.
 
 ## v1.0.0 (2021-07-17)
 

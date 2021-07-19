@@ -32,7 +32,7 @@ describe('dom', () => {
 
 	createTests(interpolate, h, renderToString);
 
-	it('copies element attributes (readme example)', () => {
+	it('copies html element attributes (readme example)', () => {
 		const link = document.createElement('a');
 		link.href = '/help';
 		const element = interpolate(
@@ -45,6 +45,16 @@ describe('dom', () => {
 
 		expect(renderToString(element)).to.equal(
 			'<strong>If you need help</strong>, visit our <a href="/help">Help Center</a>.'
+		);
+	});
+
+	it('copies namedspaced svg element attributes', () => {
+		const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+		svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+		const element = interpolate('<svg/>', { svg });
+
+		expect(renderToString(element)).to.equal(
+			'<svg xmlns="http://www.w3.org/2000/svg"></svg>'
 		);
 	});
 });
