@@ -4,7 +4,7 @@ String interpolation for React, Preact, and plain DOM.
 
 Why use Terpolate?
 
-- 🔬 **Small**: Around 0.3kb gzipped before factoring in React or Preact.
+- 🔬 **Small**: 0.3kb gzipped before factoring in React or Preact, or 0.4kb for the standalone DOM package.
 - 🔒 **Safe**: Builds an element tree using only string content, never dangerous HTML.
 - 📟 **Compatible:** Still supports outdated browsers such as Internet Explorer.
 
