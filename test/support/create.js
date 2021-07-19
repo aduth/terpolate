@@ -1,13 +1,17 @@
 import { expect } from 'chai';
 
 /** @typedef {import('../../base').Handlers} Handlers */
+/** @typedef {import('../../base').default<*>} Interpolate */
 
 /**
- * @typedef {(html: string, handlers: Handlers) => any[]|DocumentFragment} Interpolate
+ * @typedef {(
+ *   type: Parameters<Interpolate>[1],
+ *   handlers: Parameters<Interpolate>[2],
+ * ) => ReturnType<Interpolate>} BoundInterpolate
  */
 
 /**
- * @param {Interpolate} interpolate
+ * @param {BoundInterpolate} interpolate
  * @param {(tagName: any, props: object, children?: any) => any} h
  * @param {(element: any) => string} renderToString
  */
@@ -41,6 +45,9 @@ export function createTests(interpolate, h, renderToString) {
 
 		it('returns html string handled by component implementation', () => {
 			const element = interpolate('Hello <replace-me>world</replace-me>!', {
+				/**
+				 * @param {{ children: string }} props
+				 */
 				'replace-me': ({ children }) =>
 					h('span', { 'data-replaced': 'true' }, children),
 			});
@@ -78,6 +85,9 @@ export function createTests(interpolate, h, renderToString) {
 
 		it('ignores attributes in input text', () => {
 			const element = interpolate('Hello <strong data-before>world</strong>', {
+				/**
+				 * @param {{ children: string }} props
+				 */
 				strong: ({ children }) =>
 					h('span', { 'data-replaced': 'true' }, children),
 			});

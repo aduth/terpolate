@@ -61,7 +61,8 @@ export function push(array, value) {
  *
  * @param {JSX} jsx JSX implementation.
  * @param {string} html HTML to format.
- * @param {Handlers} handlers Mapping of tag names to tag name or component.
+ * @param {Record<string,Parameters<JSX>[0]>} handlers Mapping of tag names to
+ * tag name or component.
  *
  * @return {ReturnType<JSX>}
  */

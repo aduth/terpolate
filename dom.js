@@ -6,8 +6,8 @@ import baseInterpolate from './base.js';
 /** @typedef {import('./base').Handler} Handler */
 
 /**
- * @param {string|HTMLElement} type
- * @param {Record<string, any>} props
+ * @param {Parameters<baseJSX>[0]|HTMLElement} type
+ * @param {Parameters<baseJSX>[1]} props
  */
 function jsx(type, props) {
 	if (type instanceof HTMLElement) {
@@ -23,14 +23,10 @@ function jsx(type, props) {
 
 /**
  * @param {string} string
- * @param {Record<string, Handler|HTMLElement>} handlers
+ * @param {Record<string, string|HTMLElement>} handlers
  *
  * @return {DocumentFragment}
  */
 export function interpolate(string, handlers) {
-	return h(
-		Fragment,
-		null,
-		baseInterpolate(jsx, string, /** @type {Handlers} */ (handlers))
-	);
+	return h(Fragment, null, baseInterpolate(jsx, string, handlers));
 }
