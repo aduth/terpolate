@@ -30,7 +30,7 @@
 		"pretest:typecheck": "npm run clean",
 		"test:typecheck": "tsc",
 		"test": "run-p test:*",
-		"size": "run-p size:*",
+		"size": "run-s size:*",
 		"size:react": "echo \"export * from './react'\" | npx -y esbuild --bundle --minify --external:react --format=esm | npx -y gzip-size-cli",
 		"size:preact": "echo \"export * from './preact'\" | npx -y esbuild --bundle --minify --external:preact --format=esm | npx -y gzip-size-cli",
 		"size:dom": "echo \"export * from './dom'\" | npx -y esbuild --bundle --minify | npx -y gzip-size-cli",
