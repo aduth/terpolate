@@ -30,11 +30,10 @@
 		"pretest:typecheck": "npm run clean",
 		"test:typecheck": "tsc",
 		"test": "run-p test:*",
-		"presize": "[ -e node_modules/.bin/microbundle ] || npm i --no-save microbundle",
 		"size": "run-p size:*",
-		"size:react": "microbundle -o .tmp/react.js -f esm -i react.js",
-		"size:preact": "microbundle -o .tmp/preact.js -f esm -i preact.js",
-		"size:dom": "microbundle -o .tmp/dom.js -f esm -i dom.js",
+		"size:react": "echo \"export * from './react'\" | npm exec --yes esbuild -- --bundle --minify --external:react --format=esm | npm exec --yes gzip-size-cli",
+		"size:preact": "echo \"export * from './preact'\" | npm exec --yes esbuild -- --bundle --minify --external:preact --format=esm | npm exec --yes gzip-size-cli",
+		"size:dom": "echo \"export * from './dom'\" | npm exec --yes esbuild -- --bundle --minify | npm exec --yes gzip-size-cli",
 		"prepublishOnly": "npm run build"
 	},
 	"peerDependencies": {
