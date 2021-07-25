@@ -1,3 +1,9 @@
+## v1.0.4 (Unreleased)
+
+### Dependencies
+
+- Update dependencies to latest.
+
 ## v1.0.3 (2021-07-19)
 
 ### Bug Fixes
