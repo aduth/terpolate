@@ -1,4 +1,4 @@
-## v1.0.4 (Unreleased)
+## v1.0.4 (2021-07-25)
 
 ### Dependencies
 

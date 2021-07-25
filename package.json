@@ -1,6 +1,6 @@
 {
 	"name": "terpolate",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"type": "module",
 	"description": "String interpolation for React, Preact, and plain DOM",
 	"main": "react.js",
