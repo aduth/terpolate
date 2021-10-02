@@ -23,6 +23,8 @@ npm install terpolate
 
 ## Usage
 
+### React
+
 The package exports a single function, `interpolate`:
 
 ```js
@@ -40,12 +42,12 @@ For example:
 
 ```js
 function Blink({ children }) {
-	return <span class="blink">{children}</span>;
+	return <span className="blink">{children}</span>;
 }
 
 function Message() {
 	const interpolated = interpolate('Hello <Blink>world</Blink>', { Blink });
-	// ⇒ ['Hello ', <span class="blink">world</span>]
+	// ⇒ ['Hello ', <span className="blink">world</span>]
 
 	return <div>{interpolated}</div>;
 }
@@ -95,7 +97,7 @@ const element = interpolate(
 document.body.appendChild(element);
 ```
 
-Note that the DOM entrypoint assumes a DOM is present, meaning it should be run either in a browser or in a Node.js environment with a DOM global using a module like [`jsdom`](https://www.npmjs.com/package/jsdom).
+Note that the DOM entrypoint assumes a DOM is present, meaning it should be run either in a browser or in a Node.js environment with DOM globals using a module like [`jsdom-global`](https://www.npmjs.com/package/jsdom-global).
 
 ## License
 
